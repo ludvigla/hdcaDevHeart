@@ -110,11 +110,10 @@ in the manuscript.
 
 ## System requirements
 
-The code has been tested on a Macbook Pro (2017) with the specs below:
+The code has been tested on a Macbook Pro (2021) with the specs below:
 
-	* Processor : 3.1 GHz Quad-Core Intel Core i7
-	* Memory : 16 GB 2133 MHz LPDDR3
-	* Graphics : Intel HD Graphics 630 1536 MB
+	* Processor : Apple M1 Max
+	* Memory : 64 GB
 
 ## Software dependencies
 

@@ -88,7 +88,9 @@ on the docker website.
 ## Instructions for use - running analyses
 
 LL: modify text below
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Together, all analyses should take less than an hour to run on a laptop with specs comparable to
 those specified under System requirements below.
 
@@ -121,4 +123,5 @@ You can find details about the R environment used in the `session_info.txt` file
 using the docker image to run the analyses in a reproducible R environment. Using more recent 
 installations of certain R packages may lead to slightly different results, in particular 
 for analyses that use functions from the R packages `Seurat` and `sctransform`.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -15,19 +15,19 @@ docker ps
 Clone, you need to clone the github repo:
 
 ````
-git clone https://github.com/ludvigla/RRST
+git clone https://github.com/ludvigla/hdcaDevHeart
 ````
 
-Once the RRST GitHub repo has been downloaded, we can navigate into the newly created folder.
+Once the hdcaDevHeart GitHub repo has been downloaded, we can navigate into the newly created folder.
 
 ```
-cd RRST
+cd hdcaDevHeart
 ````
 
-Now we can generate a container from the `ludlar/rrst` image. This image contains an environment 
+Now we can generate a container from the `ludlar/hdcadevheart` image. This image contains an environment 
 with an installation of R and all R packages necessary to run the analyses.
 
-Note that you need to be in the correct folder (i.e. the RRST folder cloned from GitHub). You can change 
+Note that you need to be in the correct folder (i.e. the hdcaDevHeart folder cloned from GitHub). You can change 
 `--memory` flag as you see fit, but the code has only been tested with 16GiB of RAM.
 You can provide your own password for the RStudio server by replacing `YOURPASSWORD`, for example 
 `-e PASSWORD=12345678`. 
@@ -35,7 +35,7 @@ You can provide your own password for the RStudio server by replacing `YOURPASSW
 Now run the code below (don't forget to replace `YOURPASSWORD`) in the terminal:
 
 ````
-sudo docker run -d -p 1337:8787 --name RRST -e PASSWORD=YOURPASWORD --memory=16g --mount type=bind,source="$(pwd)",target=/home/rstudio -e ROOT=TRUE ludlar/rrst:latest
+sudo docker run -d -p 1337:8787 --name hdcadevheart -e PASSWORD=YOURPASWORD --memory=16g --mount type=bind,source="$(pwd)",target=/home/rstudio -e ROOT=TRUE ludlar/rrst:latest
 ````
 
 If you run the code with sudo, you will need to enter your computer password; however, 
@@ -69,8 +69,8 @@ When you have logged in, you should see something like this:
 You can start and stop the container by running the following commands from the terminal:
 
 ````
-docker start RRST
-docker stop RRST
+docker start hdcadevheart
+docker stop hdcadevheart
 ````
 
 If you run out of memory in the container, check if you can allocate more with 
@@ -87,6 +87,8 @@ on the docker website.
 
 ## Instructions for use - running analyses
 
+LL: modify text below
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Together, all analyses should take less than an hour to run on a laptop with specs comparable to
 those specified under System requirements below.
 
@@ -120,3 +122,4 @@ You can find details about the R environment used in the `session_info.txt` file
 using the docker image to run the analyses in a reproducible R environment. Using more recent 
 installations of certain R packages may lead to slightly different results, in particular 
 for analyses that use functions from the R packages `Seurat` and `sctransform`.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

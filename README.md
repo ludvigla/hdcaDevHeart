@@ -28,14 +28,16 @@ Now we can generate a container from the `ludlar/hdcadevheart` image. This image
 with an installation of R and all R packages necessary to run the analyses.
 
 Note that you need to be in the correct folder (i.e. the hdcaDevHeart folder cloned from GitHub). You can change 
-`--memory` flag as you see fit, but the code has only been tested with 16GiB of RAM.
+`--memory` flag as you see fit.
 You can provide your own password for the RStudio server by replacing `YOURPASSWORD`, for example 
 `-e PASSWORD=12345678`. 
 
-Now run the code below (don't forget to replace `YOURPASSWORD`) in the terminal:
+Now we can mount our hdcaDevheart (`source="$(pwd)"`) folder in the docker container. The folder will be available in the target directory (`target=/home/rstudio/DATADIR`).
+
+Run the code below (don't forget to replace `YOURPASSWORD` and `DATADIR`) in the terminal to start the container:
 
 ````
-sudo docker run -d -p 1337:8787 --name hdcadevheart -e PASSWORD=YOURPASWORD --memory=16g --mount type=bind,source="$(pwd)",target=/home/rstudio -e ROOT=TRUE ludlar/rrst:latest
+sudo docker run -d -p 1337:8787 --name hdcadevheart -e PASSWORD=YOURPASWORD --memory=16g --mount type=bind,source="$(pwd)",target=/home/rstudio/DATADIR -e ROOT=TRUE ludlar/hdcadevheart:latest
 ````
 
 If you run the code with sudo, you will need to enter your computer password; however, 
